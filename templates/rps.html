@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock paper scissors</title>
+  </head>
+  <style>
+    #wrapper {
+    }
+
+    #logo {
+      height: 200px;
+      width: 600px;
+    }
+
+    #dropdown {
+      margin: 20px 0px 0px 240px;
+    }
+
+    #dropdown2 {
+      margin: 0px;
+    }
+    #result{
+        padding:20px;
+        height:200px;
+        width:600px;
+        font-size:17pt;
+        color:blue;
+    }
+    a{
+        display:inline;
+        margin:0px 0px 0px 230px;
+    }
+  </style>
+  <body>
+    <img id="logo" src="static/RPS_Logo.jpg" alt="logo" />
+    <div id="wrapper">
+      <form action="/process" method="post" id="dropdown">
+        <select id="dropdown" name="player_choice">
+          <option value="rock">Rock</option>
+          <option value="paper">Paper</option>
+          <option value="scissors">Scissors</option>
+        </select>
+        <input type="submit" name="choice" />
+      </form>
+      <div id="result">
+          <!-- What player picked --> <a>You Choose {{player_choice}}</a>
+          <!-- What computer picked --> <a>Computer Choose {{computer_choice}}</a>
+          <!-- Result --> <a>{{outcome}}</a>
+      </div>
+    </div>
+  </body>
+</html>
